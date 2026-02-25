@@ -270,6 +270,35 @@ border:1px solid rgba(255,215,0,0.35);
 box-shadow:0 0 35px rgba(255,215,0,0.18),0 0 60px rgba(255,215,0,0.08);
 }
 
+/* ===== GOLD INFO BOXES ===== */
+
+.goldBox{
+background:linear-gradient(180deg,#111,#0a0a0a);
+border:1px solid rgba(255,215,0,0.35);
+border-left:3px solid gold;
+box-shadow:
+0 0 20px rgba(255,215,0,0.12),
+inset 0 0 10px rgba(255,215,0,0.05);
+border-radius:10px;
+}
+
+.goldExample{
+background:linear-gradient(180deg,#0d0d0d,#080808);
+border:1px solid rgba(255,215,0,0.5);
+box-shadow:
+0 0 25px rgba(255,215,0,0.18),
+0 0 60px rgba(255,215,0,0.05);
+font-size:15px;
+letter-spacing:.5px;
+border-radius:12px;
+}
+
+.goldHead{
+color:gold;
+font-size:15px;
+letter-spacing:1px;
+}  
+  
 .aboutWide{
 background:#0b0b0b;
 padding:28px;
@@ -587,7 +616,7 @@ Level Commission
 <table>
 <tr><th>Level</th><th>Bonus %</th></tr>
 <tr><td>1</td><td>30%</td></tr>
-<tr><td>2</td><td>18%</td></tr>
+<tr><td>2</td><td>15%</td></tr>
 <tr><td>3</td><td>10%</td></tr>
 <tr><td>4</td><td>5%</td></tr>
 <tr><td>5</td><td>3%</td></tr>
@@ -598,21 +627,21 @@ Level Commission
 </table>
 
 <!-- Unlock condition -->
-<div class="underInfo">
-<b>Unlock condition:</b><br>
-Minimum 10,000 DMX direct referral per month
+<div class="underInfo goldBox">
+  <b class="goldHead">Unlock Condition</b><br>
+  Minimum 10,000 DMX direct referral per month
 </div>
 
 <!-- Carry forward -->
-<div class="underInfo">
-<b>Carry Forward System:</b><br>
-Extra direct volume carries to next month
+<div class="underInfo goldBox">
+  <b class="goldHead">Carry Forward System</b><br>
+  Extra direct volume carries to next month
 </div>
 
 <!-- Example -->
-<div class="exampleBox">
-<b>Example:</b><br>
-50,000 DMX → 10,000 DMX per month for 5 months
+<div class="exampleBox goldExample">
+  <b class="goldHead">Example</b><br>
+  50,000 DMX → 10,000 DMX per month for 5 months
 </div>
 </div>
 </section>

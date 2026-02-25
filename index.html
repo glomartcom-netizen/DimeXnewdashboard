@@ -816,8 +816,10 @@ let res = await fetch(
 let data = await res.json();
 let txt = "";
 
-data.slice(0,20).forEach(c=>{
-txt += c.symbol.toUpperCase()+" $" + c.current_price + " • ";
+data.slice(0,50).forEach(c=>{
+txt += `<span style="color:#00ff99;margin-right:40px;">
+${c.symbol.toUpperCase()} $${c.current_price}
+</span>`;
 });
 
 document.getElementById("tickerText").innerHTML = txt;

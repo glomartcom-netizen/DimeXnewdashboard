@@ -158,6 +158,19 @@ cursor:pointer;
 .mobile{display:block;}
 }
   
+ .ticker{
+position:fixed;
+bottom:0;
+width:100%;
+background:#000;
+color:gold;
+padding:8px;
+font-size:13px;
+white-space:nowrap;
+overflow:hidden;
+z-index:999;
+  }
+  
 /* HEADING FIX */
 .section h2{
 color:gold;
@@ -815,7 +828,7 @@ CONTACT
 
 <script>
 function enter(){
-window.location.href="dashboard.html";
+  window.location.href="dashboard.html";
 }
 
 window.addEventListener("load", function(){
@@ -826,6 +839,7 @@ try{
 let res = await fetch(
 "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1"
 );
+
 let data = await res.json();
 let txt = "";
 

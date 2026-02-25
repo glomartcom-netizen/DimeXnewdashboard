@@ -78,45 +78,112 @@ margin-bottom:4px;
 .section{
 padding:35px 7%;
 }
-
-.box{
-padding:18px;
-margin-top:12px;
+<style>
+body{
+margin:0;
+font-family:Poppins;
+background:#000;
+color:#fff;
+line-height:1.4;
 }
 
-ul{
+/* HERO */
+.hero{
+min-height:70vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px 20px;
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:52px;
+color:gold;
+margin:0 0 8px 0;
+}
+
+.hero p{
+max-width:900px;
+margin:6px auto;
+color:#ddd;
+}
+
+.buttons{
+margin-top:15px;
+}
+
+.buttons button{
+margin:6px;
+padding:14px 26px;
+border:none;
+background:gold;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* SECTION */
+.section{
+padding:30px 7%;
+max-width:1200px;
+margin:auto;
+}
+
+/* HEADING FIX */
+.section h2{
+color:gold;
+margin:0 0 10px 0;   /* 🔥 gap reduced */
+line-height:1.2;
+}
+
+/* PARAGRAPH FIX */
+p{
 margin:6px 0;
-padding-left:18px;
+line-height:1.4;
 }
 
-li{
-margin:3px 0;
-  }
-  
+/* BOX */
 .box{
 background:#111;
-padding:25px;
+padding:18px;
 border-radius:12px;
 margin-top:10px;
 }
 
+/* LIST */
+ul{
+margin:6px 0;
+padding-left:18px;
+}
+li{
+margin:3px 0;
+}
+
+/* TABLE */
 table{
 width:100%;
 border-collapse:collapse;
-margin-top:20px;
+margin-top:12px;
 }
 
 th,td{
 border:1px solid #333;
-padding:12px;
+padding:10px;
 text-align:center;
 }
 
-th{background:#111;color:gold}
- 
+th{
+background:#111;
+color:gold;
+}
+
+/* FOOTER */
 .footer{
 text-align:center;
-padding:40px;
+padding:25px;
 color:#777;
 }
 </style>

@@ -813,29 +813,27 @@ CONTACT
 
 <div class="footer">© 2026 DimeX</div>
 
+<script>
 function enter(){
 window.location.href="dashboard.html";
 }
 
 window.addEventListener("load", function(){
 
-// PRICE TICKER
+// ===== PRICE TICKER =====
 async function loadPrices(){
 try{
+let res = await fetch(
+"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1"
+);
+let data = await res.json();
+let txt = "";
 
-let res = await fetch(    
-  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1"    
-  );    
+data.forEach(c=>{
+txt += c.symbol.toUpperCase()+" $"+c.current_price+" • ";
+});
 
-  let data = await res.json();    
-
-  let txt = "";    
-
-  data.forEach(c=>{    
-    txt += `${c.symbol.toUpperCase()} $${c.current_price} • `;    
-  });    
-
-  document.getElementById("tickerText").innerHTML = txt;
+document.getElementById("tickerText").innerHTML = txt;
 
 }catch(e){
 console.log("API temporary block");
@@ -843,39 +841,31 @@ console.log("API temporary block");
 }
 
 loadPrices();
-setInterval(loadPrices,120000);
+setInterval(loadPrices,60000);
+
+
+// ===== SLIDER =====
+let slides;
+
+if(window.innerWidth <= 768){
+slides = document.querySelectorAll(".slide.mobile");
+}else{
+slides = document.querySelectorAll(".slide.desktop");
+}
+
+if(!slides.length) return;
+
+slides[0].classList.add("active");
+
+let i = 0;
+
+setInterval(()=>{
+slides[i].classList.remove("active");
+i = (i + 1) % slides.length;
+slides[i].classList.add("active");
+},3500);
 
 });
 </script>
-
-<script>  
-window.addEventListener("load", function(){  
-  
-let slides;  
-  
-// mobile or desktop detect  
-if(window.innerWidth <= 768){  
-  slides = document.querySelectorAll(".slide.mobile");  
-}else{  
-  slides = document.querySelectorAll(".slide.desktop");  
-}  
-  
-// 👉 FIRST image immediately show  
-slides[0].style.opacity = "1";  
-  
-let i = 0;  
-  
-setInterval(function(){  
-  
-slides[i].style.opacity = "0";  
-  
-i = (i + 1) % slides.length;  
-  
-slides[i].style.opacity = "1";  
-  
-}, 3500);  
-  
-});  
-</script>  
 </body>    
 </html>  

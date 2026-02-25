@@ -195,6 +195,17 @@ cursor:pointer;
 .mobile{display:block;}
 }
 
+.ticker span{
+display:inline-block;
+padding-left:100%;
+animation: tickerMove 40s linear infinite;
+}
+
+@keyframes tickerMove{
+0%{ transform: translateX(0); }
+100%{ transform: translateX(-100%); }
+  }
+  
 .ticker{
 position:fixed;
 bottom:0;
@@ -805,8 +816,8 @@ let res = await fetch(
 let data = await res.json();
 let txt = "";
 
-data.forEach(c=>{
-txt += c.symbol.toUpperCase()+" $"+c.current_price+" • ";
+data.slice(0,20).forEach(c=>{
+txt += c.symbol.toUpperCase()+" $" + c.current_price + " • ";
 });
 
 document.getElementById("tickerText").innerHTML = txt;

@@ -842,13 +842,17 @@ slides[i].classList.add("active");
 },3500);
 
 // 🔥 LOADER HIDE CODE
-setTimeout(()=>{
-document.getElementById("loader").style.opacity="0";
-setTimeout(()=>{
-document.getElementById("loader").style.display="none";
-},600);
-},1200);  
-});
+const loader = document.getElementById("loader");
+if(loader){
+  setTimeout(()=>{
+    loader.style.opacity="0";
+    setTimeout(()=>{
+      loader.style.display="none";
+    },600);
+  },1200);
+}
+
+});   <!-- THIS closes window load -->
 </script>
-</body>    
-</html>  
+</body>
+</html>

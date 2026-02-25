@@ -144,6 +144,52 @@ margin:auto;
 color: gold;
 margin-bottom:8px;
   }  
+/* SLIDER */
+.slider{
+position:relative;
+width:100%;
+height:100vh;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:0.8s ease;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.4);
+}
+
+/* Desktop only */
+.desktop{
+display:block;
+}
+
+/* Mobile only */
+.mobile{
+display:none;
+}
+
+/* Switch for mobile */
+@media(max-width:768px){
+.desktop{
+display:none;
+}
+.mobile{
+display:block;
+}
+  }
   
 /* HEADING FIX */
 .section h2{
@@ -293,6 +339,26 @@ color:#777;
 
 <body>
 
+<!-- SLIDER -->  <div class="slider">  <!-- TOP LOGO -->  <div class="topLogo">    <img src="https://raw.githubusercontent.com/glomartcom-netizen/Dimexhome/main/logodashbord.png">    
+</div>  <!-- DESKTOP -->  <img class="slide desktop active"    
+src="https://glomartcom-netizen.github.io/Dimexhome/file_0000000010947208bc00676243f4f87a.png">  <img class="slide desktop"    
+src="https://glomartcom-netizen.github.io/Dimexhome/file_00000000c6a072089a23049a3dd76e06.png">
+
+<!-- MOBILE -->  <img class="slide mobile"    src="https://raw.githubusercontent.com/glomartcom-netizen/DimeXtest/main/mobileslide1.png">
+
+<img class="slide mobile"    
+src="https://raw.githubusercontent.com/glomartcom-netizen/DimeXtest/main/mobileslide2.png">
+
+<div class="overlay"></div>  <div class="heroText">      
+<button class="btn" onclick="enter()">ENTER DASHBOARD</button>    
+</div>  </div>  <script>    
+function enter(){    
+  window.location.href =    
+  "https://glomartcom-netizen.github.io/Dimexhome/dashboard.html";    
+}    
+</script>  </div>  <!-- PRICE TICKER -->  <div class="ticker">    
+<span id="tickerText">Loading crypto market...</span>
+  
 <!-- HERO -->
 <section class="hero">
 <div>
@@ -308,11 +374,6 @@ DimeX is designed to create a sustainable liquidity foundation and transparent s
 Through structured staking participation and strategic liquidity expansion, DimeX empowers users to contribute directly to ecosystem strength while earning rewards in a fully on-chain environment.
 </p>
 
-<div class="buttons">
-<button>Enter Dashboard</button>
-<button>Start Staking</button>
-<button>View Smart Contract</button>
-</div>
 </div>
 </section>
 
@@ -794,5 +855,69 @@ CONTACT
 
 <div class="footer">© 2026 DimeX</div>
 
-</body>
-</html>
+function enter(){
+window.location.href="dashboard.html";
+}
+
+window.addEventListener("load", function(){
+
+// PRICE TICKER
+async function loadPrices(){
+try{
+
+let res = await fetch(    
+  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1"    
+  );    
+
+  let data = await res.json();    
+
+  let txt = "";    
+
+  data.forEach(c=>{    
+    txt += `${c.symbol.toUpperCase()} $${c.current_price} • `;    
+  });    
+
+  document.getElementById("tickerText").innerHTML = txt;
+
+}catch(e){
+console.log("API temporary block");
+}
+}
+
+loadPrices();
+setInterval(loadPrices,120000);
+
+});
+</script>
+
+<script>  
+window.addEventListener("load", function(){  
+  
+let slides;  
+  
+// mobile or desktop detect  
+if(window.innerWidth <= 768){  
+  slides = document.querySelectorAll(".slide.mobile");  
+}else{  
+  slides = document.querySelectorAll(".slide.desktop");  
+}  
+  
+// 👉 FIRST image immediately show  
+slides[0].style.opacity = "1";  
+  
+let i = 0;  
+  
+setInterval(function(){  
+  
+slides[i].style.opacity = "0";  
+  
+i = (i + 1) % slides.length;  
+  
+slides[i].style.opacity = "1";  
+  
+}, 3500);  
+  
+});  
+</script>  
+</body>    
+</html>  

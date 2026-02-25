@@ -236,6 +236,7 @@ margin-right:8px;
   }
 /* GLASS CARD STYLE */
 .glassCard{
+.glassCard{
 max-width:520px;
 margin:20px auto;
 padding:28px;
@@ -245,14 +246,13 @@ background:rgba(255,255,255,0.03);
 backdrop-filter: blur(10px);
 
 border:1px solid rgba(255,215,0,0.35);
-box-shadow:0 0 40px rgba(255,215,0,0.08);
+
+/* 🔥 Medium glow always */
+box-shadow:
+0 0 35px rgba(255,215,0,0.18),
+0 0 60px rgba(255,215,0,0.08);
 
 transition:0.3s;
-}
-
-.glassCard:hover{
-box-shadow:0 0 60px rgba(255,215,0,0.18);
-transform:translateY(-3px);
 }
   
 .aboutWide{

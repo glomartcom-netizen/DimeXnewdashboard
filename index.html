@@ -135,6 +135,11 @@ max-width:1200px;
 margin:auto;
 }
 
+.goldTitle{
+color: gold;
+margin-bottom:8px;
+  }  
+  
 /* HEADING FIX */
 .section h2{
 color:gold;
@@ -193,7 +198,22 @@ th{
 background:#111;
 color:gold;
 }
+  
+.tick{
+list-style:none;
+padding-left:0;
+}
 
+.tick li{
+margin:6px 0;
+}
+
+.tick li::before{
+content:"✔";
+color:gold;
+margin-right:8px;
+  }
+  
 /* FOOTER */
 .footer{
 text-align:center;
@@ -484,28 +504,49 @@ FUTURE ROADMAP
 </a>
 </h2>
 
-<p><b>Phase 1 — Foundation</b><br>
-Token deployment<br>
-Platform launch<br>
-Staking activation</p>
-
 <div class="box">
-<b>Phase 2 — Liquidity Growth</b><br>
-Liquidity pool expansion<br>
-Community onboarding<br>
-Market preparation
+<h3 class="goldTitle">
+Phase 1 — Foundation
+</h3>
+<ul class="tick">
+<li>Token deployment</li>
+<li>Platform launch</li>
+<li>Staking activation</li>
+</ul>
 </div>
 
-<p><b>Phase 3 — Ecosystem Expansion</b><br>
-DeFi integrations<br>
-Platform utilities<br>
-Strategic partnerships</p>
+<div class="box">
+<h3 class="goldTitle">
+Phase 2 — Liquidity Growth
+</h3>
+<ul class="tick">
+<li>Liquidity pool expansion</li>
+<li>Community onboarding</li>
+<li>Market preparation</li>
+</ul>
+</div>
 
-<p><b>Phase 4 — Global Scaling</b><br>
-Exchange listings<br>
-Platform growth<br>
-Long-term sustainability</p>
-</section>
+<div class="box">
+<h3 class="goldTitle">
+Phase 3 — Ecosystem Expansion
+</h3>
+<ul class="tick">
+<li>DeFi integrations</li>
+<li>Platform utilities</li>
+<li>Strategic partnerships</li>
+</ul>
+</div>
+
+<div class="box">
+<h3 class="goldTitle">
+Phase 4 — Global Scaling
+</h3>
+<ul class="tick">
+<li>Exchange listings</li>
+<li>Platform growth</li>
+<li>Long-term sustainability</li>
+</ul>
+</div>
 
 <!-- FUTURE OUTLOOK -->
 <section class="section">

@@ -293,17 +293,34 @@ box-shadow:
 inset 0 0 6px rgba(255,215,0,0.04);
 }
 
-/* example box */
+.infoList{
+list-style:none;
+padding-left:0;
+margin-top:12px;
+}
+
+.infoList li{
+margin:10px 0;
+padding-left:20px;
+position:relative;
+font-size:14px;
+line-height:1.6;
+}
+
+.infoList li::before{
+content:"✔";
+position:absolute;
+left:0;
+color:gold;
+font-size:12px;
+}
+
 .goldExample{
 background:linear-gradient(180deg,#0d0d0d,#080808);
-border:1px solid rgba(255,215,0,0.45);
-border-radius:12px;
-padding:18px;
-margin-top:14px;
-
-box-shadow:
-0 0 20px rgba(255,215,0,0.15),
-0 0 40px rgba(255,215,0,0.04);
+border:1px solid rgba(255,215,0,0.4);
+border-radius:14px;
+padding:20px;
+box-shadow:0 0 25px rgba(255,215,0,0.15);
 }
 
 /* title */
@@ -366,7 +383,11 @@ src="https://raw.githubusercontent.com/glomartcom-netizen/DimeXtest/main/mobiles
 <div class="overlay"></div>
 
 </div>   <!-- slider end -->
-
+  
+<div class="heroText">
+<button class="btn" onclick="enter()">ENTER DASHBOARD</button>
+</div>
+  
 <div class="ticker">
 <span id="tickerText">Loading crypto market...</span>
 </div>
@@ -651,30 +672,23 @@ Level Bonus
 <tr><td>16-20</td><td>0.25%</td></tr>
 </table>
 
-<!-- Calculation -->
-<div class="underInfo goldBox">
-  <b class="goldHead">Calculation</b><br>
-  √ Level Bonus are paid from REWARD POOL 
-    (Not from User deposits)
-</div>  
-  
-<!-- Unlock condition -->
-<div class="underInfo goldBox">
-  <b class="goldHead">Unlock Condition</b><br>
-  √ Minimum 10,000 DMX direct referral per month<br>
-  √ Resets every 30 days (Smart contract automated)
-</div>
-
-<!-- Carry forward -->
-<div class="underInfo goldBox">
-  <b class="goldHead">Carry Forward System</b><br>
-  √ Extra direct volume carries to next month
-</div>
-
-<!-- Example -->
 <div class="exampleBox goldExample">
-  <b class="goldHead">Example</b><br>
-  50,000 DMX → 10,000 DMX per month for 5 months
+
+<span class="goldHead">Level Commission Conditions</span>
+
+<ul class="infoList">
+
+<li><b>Calculation:</b> Level bonus is paid from REWARD POOL (Not from user deposits)</li>
+
+<li><b>Unlock Condition:</b> Minimum 10,000 DMX direct referral per month  
+Resets every 30 days (Smart contract automated)</li>
+
+<li><b>Carry Forward:</b> Extra direct volume carries to next month</li>
+
+<li><b>Example:</b> 50,000 DMX → 10,000 DMX per month for 5 months</li>
+
+</ul>
+
 </div>
 </section>
 

@@ -270,34 +270,55 @@ border:1px solid rgba(255,215,0,0.35);
 box-shadow:0 0 35px rgba(255,215,0,0.18),0 0 60px rgba(255,215,0,0.08);
 }
 
-/* ===== GOLD INFO BOXES ===== */
+.smallIcon,
+.icon{
+color:gold !important;
+}
+
+/* ===== GOLD INFO BOX FIXED ===== */
 
 .goldBox{
 background:linear-gradient(180deg,#111,#0a0a0a);
-border:1px solid rgba(255,215,0,0.35);
-border-left:3px solid gold;
-box-shadow:
-0 0 20px rgba(255,215,0,0.12),
-inset 0 0 10px rgba(255,215,0,0.05);
+
+border:1px solid rgba(255,215,0,0.25);
+border-left:2px solid gold;   /* thinner border */
+
+padding:16px 18px;            /* more breathing space */
+margin:14px 0;
+
 border-radius:10px;
+
+box-shadow:
+0 0 18px rgba(255,215,0,0.10),
+inset 0 0 6px rgba(255,215,0,0.04);
 }
 
+/* example box */
 .goldExample{
 background:linear-gradient(180deg,#0d0d0d,#080808);
-border:1px solid rgba(255,215,0,0.5);
-box-shadow:
-0 0 25px rgba(255,215,0,0.18),
-0 0 60px rgba(255,215,0,0.05);
-font-size:15px;
-letter-spacing:.5px;
+border:1px solid rgba(255,215,0,0.45);
 border-radius:12px;
+padding:18px;
+margin-top:14px;
+
+box-shadow:
+0 0 20px rgba(255,215,0,0.15),
+0 0 40px rgba(255,215,0,0.04);
 }
 
+/* title */
 .goldHead{
 color:gold;
-font-size:15px;
+font-size:14px;
 letter-spacing:1px;
-}  
+display:block;
+margin-bottom:6px;
+}
+  
+.smallIcon,
+.icon{
+color:gold !important;
+}
   
 .aboutWide{
 background:#0b0b0b;

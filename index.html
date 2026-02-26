@@ -344,7 +344,46 @@ border-radius:14px;
 color:#ccc;
 border:1px solid #1f2933;
 }
+.contractInput{
+width:80%;
+max-width:520px;
+padding:12px;
+background:#000;
+color:#fff;
+border:1px solid #333;
+border-radius:8px;
+display:block;
+margin:10px auto;
+text-align:center;
+}
 
+.contractActions{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-bottom:10px;
+}
+
+.scanBtn{
+background:#111;
+color:gold;
+padding:8px 14px;
+border-radius:6px;
+text-decoration:none;
+border:1px solid gold;
+font-size:13px;
+}
+
+.copyBtn{
+background:gold;
+color:#000;
+border:none;
+padding:8px 14px;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+font-size:13px;
+  }
 .footer{text-align:center;padding:25px;color:#777;}
 </style>
 </head>
@@ -852,6 +891,45 @@ Phase 4 — Global Scaling
 </ul>
 </div>
 </section>
+  
+<!-- CONTRACT PANEL -->
+<div class="section">
+<div class="box" style="max-width:700px;margin:auto;text-align:center;">
+
+<h2 class="goldTitle">
+<i class="fa-solid fa-file-contract icon"></i>
+Smart Contracts
+</h2>
+
+<!-- DMX TOKEN -->
+<h3 class="goldTitle">DMX Token Contract</h3>
+<input value="Coming after deploy" readonly class="contractInput">
+
+<div class="contractActions">
+<a class="scanBtn">🔗 View on BscScan</a>
+<button class="copyBtn">📋 Copy</button>
+</div>
+
+<!-- STAKING -->
+<h3 class="goldTitle" style="margin-top:25px;">Staking Contract</h3>
+<input value="Coming after deploy" readonly class="contractInput">
+
+<div class="contractActions">
+<a class="scanBtn">🔗 View on BscScan</a>
+<button class="copyBtn">📋 Copy</button>
+</div>
+
+<!-- LP -->
+<h3 class="goldTitle" style="margin-top:25px;">Liquidity Pair (LP)</h3>
+<input value="Will appear after liquidity added" readonly class="contractInput">
+
+<div class="contractActions">
+<a class="scanBtn">🔗 View on BscScan</a>
+<button class="copyBtn">📋 Copy</button>
+</div>
+
+</div>
+</div>  
   
 <!-- FUTURE OUTLOOK -->
 <section class="section">

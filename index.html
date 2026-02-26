@@ -878,9 +878,7 @@ let data = await res.json();
 let txt = "";
 
 data.slice(0,50).forEach(c=>{
-txt += `<span style="color:#00ff99;margin-right:40px;">
-${c.symbol.toUpperCase()} $${c.current_price}
-</span>`;
+txt += `${c.symbol.toUpperCase()} $${c.current_price} • `;
 });
 
 document.getElementById("tickerText").innerHTML = txt;
